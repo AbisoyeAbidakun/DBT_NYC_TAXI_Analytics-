@@ -1,10 +1,9 @@
 version: 2
 
-
 sources:
   - name: staging
-    description: "Contains data staged for transformation (ELT)"
-    database: eighth-beacon-357016
+    description: Contains data staged for transformation (ELT)
+    database: eighth-beacon-357016 
     schema: trips_data_all
     tables:
       - name: green_tripdata
