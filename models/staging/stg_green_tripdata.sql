@@ -8,23 +8,16 @@ with tripdata as
   where vendorid is not null 
 )
 select
-    -- identifiers
     {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
     cast(vendorid as integer) as vendorid,
     cast(ratecodeid as integer) as ratecodeid,
     cast(pulocationid as integer) as  pickup_locationid,
     cast(dolocationid as integer) as dropoff_locationid,
-    
-    -- timestamps
     cast(lpep_pickup_datetime as timestamp) as pickup_datetime,
     cast(lpep_dropoff_datetime as timestamp) as dropoff_datetime,
-    
-    -- trip info
     store_and_fwd_flag,
     cast(passenger_count as integer) as passenger_count,
     cast(trip_distance as numeric) as trip_distance,
-    
-    -- payment info
     cast(fare_amount as numeric) as fare_amount,
     cast(extra as numeric) as extra,
     cast(mta_tax as numeric) as mta_tax,
