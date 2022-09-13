@@ -38,13 +38,11 @@ select
     trips_unioned.store_and_fwd_flag, 
     trips_unioned.passenger_count, 
     trips_unioned.trip_distance, 
-    trips_unioned.trip_type, 
     trips_unioned.fare_amount, 
     trips_unioned.extra, 
     trips_unioned.mta_tax, 
     trips_unioned.tip_amount, 
     trips_unioned.tolls_amount, 
-    trips_unioned.ehail_fee, 
     trips_unioned.improvement_surcharge, 
     trips_unioned.total_amount, 
     trips_unioned.congestion_surcharge
